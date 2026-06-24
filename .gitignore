@@ -1,0 +1,14 @@
+# Hugo build artifacts
+public/
+resources/
+.hugo_build.lock
+
+# OS / IDE
+.DS_Store
+.idea/
+
+# Python virtualenv (PyCharm)
+.venv/
+
+# Local Claude Code settings (per-machine)
+.claude/settings.local.json

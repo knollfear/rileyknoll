@@ -1,0 +1,8 @@
+{{- /* Auto-generated nav: Home + one link per top-level section.
+       A new section (e.g. "dinosaurs") appears here automatically. */ -}}
+<nav class="site-nav">
+  <a href="{{ "/" | relURL }}">Home</a>
+  {{- range .Site.Sections }}
+  <a href="{{ .Permalink }}">{{ .Title }}</a>
+  {{- end }}
+</nav>

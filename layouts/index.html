@@ -1,0 +1,20 @@
+{{ define "main" }}
+<section class="home-intro">
+  <h1>{{ .Site.Title }}</h1>
+  {{ with .Site.Params.tagline }}<p class="tagline">{{ . }}</p>{{ end }}
+  {{ .Content }}
+</section>
+<section class="recent-updates">
+  <h2>Latest updates</h2>
+  <ul class="post-list">
+    {{ range first 5 (where .Site.RegularPages "Section" "updates") }}
+    <li>
+      <a href="{{ .Permalink }}">{{ .Title }}</a>
+      {{ with .Date }}<time datetime="{{ .Format "2006-01-02" }}">{{ .Format "Jan 2, 2006" }}</time>{{ end }}
+    </li>
+    {{ else }}
+    <li>No updates yet.</li>
+    {{ end }}
+  </ul>
+</section>
+{{ end }}

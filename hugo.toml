@@ -1,0 +1,6 @@
+baseURL = "https://rileyknoll.com/"
+languageCode = "en-us"
+title = "Riley Knoll"
+
+[params]
+  tagline = "Riley's corner of the internet."
