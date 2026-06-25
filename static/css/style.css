@@ -3,16 +3,28 @@
   --muted: #6b7280;
   --accent: #2563eb;
   --bg: #fdfdfb;
+  --stripe: #ffd9e6;       /* baby pink — change this to recolor the stripes */
+  --stripe-width: 40px;    /* how wide one pink + one white band is together */
+  /* The site font. The names after Quicksand are backups in case it can't load. */
+  --font: "Quicksand", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
 }
 
 * { box-sizing: border-box; }
 
 body {
   margin: 0;
-  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font-family: var(--font);
   line-height: 1.6;
   color: var(--ink);
-  background: var(--bg);
+  /* Vertical baby pink stripes: the gradient goes left-to-right (90deg),
+     so the color bands stand up tall like stripes on wallpaper. */
+  background: repeating-linear-gradient(
+    90deg,
+    var(--stripe) 0,
+    var(--stripe) calc(var(--stripe-width) / 2),   /* pink half */
+    var(--bg) calc(var(--stripe-width) / 2),
+    var(--bg) var(--stripe-width)                   /* white half */
+  );
 }
 
 main, .site-header, .site-footer {
@@ -25,7 +37,6 @@ main, .site-header, .site-footer {
   display: flex;
   align-items: baseline;
   gap: 1.5rem;
-  border-bottom: 1px solid #eee;
   flex-wrap: wrap;
 }
 
@@ -48,7 +59,6 @@ h1 { line-height: 1.2; }
 .post-list time, .post-date { color: var(--muted); font-size: 0.85rem; }
 
 .site-footer {
-  border-top: 1px solid #eee;
   margin-top: 3rem;
   color: var(--muted);
   font-size: 0.85rem;
