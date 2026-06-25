@@ -33,10 +33,15 @@ a {
   font-family: var(--font);
 }
 
+/* The white "cards" that hold the content. Putting the text on solid white
+   makes it easy to read, instead of sitting right on the striped background. */
 main, .site-header, .site-footer {
   max-width: 720px;
-  margin: 0 auto;
-  padding: 1rem 1.25rem;
+  margin: 1.25rem auto;                          /* space above & below each card */
+  padding: 1.25rem 1.5rem;
+  background: #ffffff;                            /* solid white behind the text */
+  border-radius: 16px;                           /* soft rounded corners */
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);    /* the slight drop shadow */
 }
 
 .site-header {
