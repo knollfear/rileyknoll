@@ -1,7 +1,7 @@
 :root {
-  --ink: #1f2430;
+  --ink: #6ba8d6;
   --muted: #6b7280;
-  --accent: #2563eb;
+  --accent: #ffa64d;       /* tangerine — the color for links */
   --bg: #fdfdfb;
   --stripe: #ffd9e6;       /* baby pink — change this to recolor the stripes */
   --stripe-width: 40px;    /* how wide one pink + one white band is together */
@@ -27,10 +27,21 @@ body {
   );
 }
 
+/* Every link on the site: baby blue, in the same font as everything else */
+a {
+  color: var(--accent);
+  font-family: var(--font);
+}
+
+/* The white "cards" that hold the content. Putting the text on solid white
+   makes it easy to read, instead of sitting right on the striped background. */
 main, .site-header, .site-footer {
   max-width: 720px;
-  margin: 0 auto;
-  padding: 1rem 1.25rem;
+  margin: 1.25rem auto;                          /* space above & below each card */
+  padding: 1.25rem 1.5rem;
+  background: #ffffff;                            /* solid white behind the text */
+  border-radius: 16px;                           /* soft rounded corners */
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);    /* the slight drop shadow */
 }
 
 .site-header {
@@ -52,14 +63,14 @@ main, .site-header, .site-footer {
 .site-nav a:hover { text-decoration: underline; }
 
 h1 { line-height: 1.2; }
-.tagline { color: var(--muted); font-size: 1.1rem; }
+.tagline { color: var(--ink); font-size: 1.1rem; }
 
 .post-list { list-style: none; padding: 0; }
 .post-list li { margin: 0.4rem 0; display: flex; gap: 0.75rem; align-items: baseline; }
-.post-list time, .post-date { color: var(--muted); font-size: 0.85rem; }
+.post-list time, .post-date { color: var(--ink); font-size: 0.85rem; }
 
 .site-footer {
   margin-top: 3rem;
-  color: var(--muted);
+  color: var(--ink);
   font-size: 0.85rem;
 }
